@@ -4,9 +4,11 @@ import { WidgetContext } from '@home/models/widget-component.models';
 import Highlight = CanvasGauges.Highlight;
 import BaseGauge = CanvasGauges.BaseGauge;
 import GenericOptions = CanvasGauges.GenericOptions;
+import { ValueFormatProcessor } from '@shared/models/widget-settings.models';
 export type AnimationRule = 'linear' | 'quad' | 'quint' | 'cycle' | 'bounce' | 'elastic' | 'dequad' | 'dequint' | 'decycle' | 'debounce' | 'delastic';
 export type AnimationTarget = 'needle' | 'plate';
 export interface AnalogueGaugeSettings {
+    formatValue: ValueFormatProcessor;
     minValue: number;
     maxValue: number;
     unitTitle: string;
@@ -46,6 +48,7 @@ interface BaseGaugeModel extends BaseGauge {
 export declare abstract class TbBaseGauge<S, O extends GenericOptions> {
     protected ctx: WidgetContext;
     private gauge;
+    protected formatValue: ValueFormatProcessor;
     protected constructor(ctx: WidgetContext, canvasId: string);
     protected abstract createGaugeOptions(gaugeElement: HTMLElement, settings: S): O;
     protected abstract createGauge(gaugeData: O): BaseGaugeModel;

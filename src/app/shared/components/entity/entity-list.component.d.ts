@@ -1,4 +1,4 @@
-import { AfterViewInit, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, ValidationErrors } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
@@ -10,8 +10,8 @@ import { MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipGrid } from '@angular/material/chips';
 import { MatFormFieldAppearance, SubscriptSizing } from '@angular/material/form-field';
 import * as i0 from "@angular/core";
-export declare class EntityListComponent implements ControlValueAccessor, OnInit, AfterViewInit, OnChanges {
-    translate: TranslateService;
+export declare class EntityListComponent implements ControlValueAccessor, OnInit, OnChanges {
+    private translate;
     private entityService;
     private fb;
     entityListFormGroup: UntypedFormGroup;
@@ -29,6 +29,7 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     subscriptSizing: SubscriptSizing;
     hint: string;
     syncIdsWithDB: boolean;
+    inlineField: boolean;
     entityInput: ElementRef<HTMLInputElement>;
     matAutocomplete: MatAutocomplete;
     chipList: MatChipGrid;
@@ -40,10 +41,9 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     constructor(translate: TranslateService, entityService: EntityService, fb: UntypedFormBuilder);
     private updateValidators;
     registerOnChange(fn: any): void;
-    registerOnTouched(fn: any): void;
+    registerOnTouched(_fn: any): void;
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
-    ngAfterViewInit(): void;
     setDisabledState(isDisabled: boolean): void;
     writeValue(value: Array<string> | null): void;
     validate(): ValidationErrors | null;
@@ -56,5 +56,5 @@ export declare class EntityListComponent implements ControlValueAccessor, OnInit
     private clear;
     textIsNotEmpty(text: string): boolean;
     static ɵfac: i0.ɵɵFactoryDeclaration<EntityListComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": { "alias": "entityType"; "required": false; }; "subType": { "alias": "subType"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; "syncIdsWithDB": { "alias": "syncIdsWithDB"; "required": false; }; }, {}, never, ["[matSuffix]"], false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EntityListComponent, "tb-entity-list", never, { "entityType": { "alias": "entityType"; "required": false; }; "subType": { "alias": "subType"; "required": false; }; "labelText": { "alias": "labelText"; "required": false; }; "placeholderText": { "alias": "placeholderText"; "required": false; }; "requiredText": { "alias": "requiredText"; "required": false; }; "appearance": { "alias": "appearance"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "subscriptSizing": { "alias": "subscriptSizing"; "required": false; }; "hint": { "alias": "hint"; "required": false; }; "syncIdsWithDB": { "alias": "syncIdsWithDB"; "required": false; }; "inlineField": { "alias": "inlineField"; "required": false; }; }, {}, never, ["[matSuffix]"], false, never>;
 }

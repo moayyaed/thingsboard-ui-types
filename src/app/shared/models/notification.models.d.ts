@@ -107,7 +107,7 @@ export interface NotificationRule extends Omit<BaseData<NotificationRuleId>, 'la
         description: string;
     };
 }
-export type NotificationRuleTriggerConfig = Partial<AlarmNotificationRuleTriggerConfig & DeviceInactivityNotificationRuleTriggerConfig & EntityActionNotificationRuleTriggerConfig & AlarmCommentNotificationRuleTriggerConfig & AlarmAssignmentNotificationRuleTriggerConfig & RuleEngineLifecycleEventNotificationRuleTriggerConfig & EntitiesLimitNotificationRuleTriggerConfig & ApiUsageLimitNotificationRuleTriggerConfig & RateLimitsNotificationRuleTriggerConfig>;
+export type NotificationRuleTriggerConfig = Partial<AlarmNotificationRuleTriggerConfig & DeviceInactivityNotificationRuleTriggerConfig & EntityActionNotificationRuleTriggerConfig & AlarmCommentNotificationRuleTriggerConfig & AlarmAssignmentNotificationRuleTriggerConfig & RuleEngineLifecycleEventNotificationRuleTriggerConfig & EntitiesLimitNotificationRuleTriggerConfig & ApiUsageLimitNotificationRuleTriggerConfig & RateLimitsNotificationRuleTriggerConfig & ResourceUsageShortageNotificationRuleTriggerConfig>;
 export interface AlarmNotificationRuleTriggerConfig {
     alarmTypes?: Array<string>;
     alarmSeverities?: Array<AlarmSeverity>;
@@ -151,6 +151,11 @@ export interface RuleEngineLifecycleEventNotificationRuleTriggerConfig {
 export interface EntitiesLimitNotificationRuleTriggerConfig {
     entityTypes: EntityType[];
     threshold: number;
+}
+export interface ResourceUsageShortageNotificationRuleTriggerConfig {
+    cpuThreshold: number;
+    ramThreshold: number;
+    storageThreshold: number;
 }
 export interface ApiUsageLimitNotificationRuleTriggerConfig {
     apiFeatures: ApiFeature[];
@@ -342,7 +347,8 @@ export declare enum NotificationType {
     RATE_LIMITS = "RATE_LIMITS",
     EDGE_CONNECTION = "EDGE_CONNECTION",
     EDGE_COMMUNICATION_FAILURE = "EDGE_COMMUNICATION_FAILURE",
-    TASK_PROCESSING_FAILURE = "TASK_PROCESSING_FAILURE"
+    TASK_PROCESSING_FAILURE = "TASK_PROCESSING_FAILURE",
+    RESOURCES_SHORTAGE = "RESOURCES_SHORTAGE"
 }
 export declare const NotificationTypeIcons: Map<NotificationType, string>;
 export declare const AlarmSeverityNotificationColors: Map<AlarmSeverity, string>;
@@ -369,7 +375,8 @@ export declare enum TriggerType {
     RATE_LIMITS = "RATE_LIMITS",
     EDGE_CONNECTION = "EDGE_CONNECTION",
     EDGE_COMMUNICATION_FAILURE = "EDGE_COMMUNICATION_FAILURE",
-    TASK_PROCESSING_FAILURE = "TASK_PROCESSING_FAILURE"
+    TASK_PROCESSING_FAILURE = "TASK_PROCESSING_FAILURE",
+    RESOURCES_SHORTAGE = "RESOURCES_SHORTAGE"
 }
 export declare const TriggerTypeTranslationMap: Map<TriggerType, string>;
 export interface NotificationUserSettings {

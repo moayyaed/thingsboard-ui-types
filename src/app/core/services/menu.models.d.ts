@@ -80,7 +80,8 @@ export declare enum MenuId {
     features = "features",
     otaUpdates = "otaUpdates",
     version_control = "version_control",
-    api_usage = "api_usage"
+    api_usage = "api_usage",
+    trendz_settings = "trendz_settings"
 }
 export declare const menuSectionMap: Map<MenuId, MenuSection>;
 export declare const buildUserMenu: (authState: AuthState) => Array<MenuSection>;

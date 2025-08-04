@@ -71,6 +71,7 @@ export declare const HelpLinks: {
         ruleNodeOriginatorTelemetry: string;
         ruleNodeCustomerAttributes: string;
         ruleNodeCustomerDetails: string;
+        ruleNodeFetchDeviceCredentials: string;
         ruleNodeDeviceAttributes: string;
         ruleNodeRelatedAttributes: string;
         ruleNodeTenantAttributes: string;
@@ -80,6 +81,7 @@ export declare const HelpLinks: {
         ruleNodeMsgToEmail: string;
         ruleNodeAssignToCustomer: string;
         ruleNodeUnassignFromCustomer: string;
+        ruleNodeCalculatedFields: string;
         ruleNodeClearAlarm: string;
         ruleNodeCreateAlarm: string;
         ruleNodeCreateRelation: string;
@@ -150,12 +152,14 @@ export declare const HelpLinks: {
         scada: string;
         scadaSymbolDev: string;
         scadaSymbolDevAnimation: string;
+        scadaSymbolDevConnectorAnimation: string;
         domains: string;
         mobileApplication: string;
         mobileBundle: string;
         mobileQrCode: string;
         calculatedField: string;
         timewindowSettings: string;
+        trendzSettings: string;
     };
 };
 export interface ValueTypeData {

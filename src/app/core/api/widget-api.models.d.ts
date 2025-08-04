@@ -22,6 +22,8 @@ import { PersistentRpc } from '@shared/models/rpc.models';
 import { EventEmitter } from '@angular/core';
 import { DashboardUtilsService } from '@core/services/dashboard-utils.service';
 import { MatDialogRef } from '@angular/material/dialog';
+import { TbUnit } from '@shared/models/unit.models';
+import { UnitService } from '@core/services/unit.service';
 export interface TimewindowFunctions {
     onUpdateTimewindow: (startTimeMs: number, endTimeMs: number, interval?: number) => void;
     onResetTimewindow: () => void;
@@ -160,6 +162,7 @@ export declare class WidgetSubscriptionContext {
     utils: UtilsService;
     dashboardUtils: DashboardUtilsService;
     raf: RafService;
+    unitService: UnitService;
     widgetUtils: IWidgetUtils;
     getServerTimeDiff: () => Observable<number>;
 }
@@ -208,7 +211,7 @@ export interface WidgetSubscriptionOptions {
     timeForComparison?: ComparisonDuration;
     comparisonCustomIntervalValue?: number;
     decimals?: number;
-    units?: string;
+    units?: TbUnit;
     callbacks?: WidgetSubscriptionCallbacks;
 }
 export interface SubscriptionEntityInfo {
