@@ -39,6 +39,7 @@ import { AlarmService } from '@core/http/alarm.service';
 import { ResourceService } from '@core/http/resource.service';
 import { OAuth2Service } from '@core/http/oauth2.service';
 import { MobileAppService } from '@core/http/mobile-app.service';
+import { AiModelService } from '@core/http/ai-model.service';
 import * as i0 from "@angular/core";
 export declare class EntityService {
     private http;
@@ -66,7 +67,8 @@ export declare class EntityService {
     private resourceService;
     private oauth2Service;
     private mobileAppService;
-    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, edgeService: EdgeService, assetService: AssetService, entityViewService: EntityViewService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, tenantProfileService: TenantProfileService, assetProfileService: AssetProfileService, utils: UtilsService, queueService: QueueService, notificationService: NotificationService, alarmService: AlarmService, resourceService: ResourceService, oauth2Service: OAuth2Service, mobileAppService: MobileAppService);
+    private aiModelService;
+    constructor(http: HttpClient, store: Store<AppState>, deviceService: DeviceService, edgeService: EdgeService, assetService: AssetService, entityViewService: EntityViewService, tenantService: TenantService, customerService: CustomerService, userService: UserService, ruleChainService: RuleChainService, dashboardService: DashboardService, entityRelationService: EntityRelationService, attributeService: AttributeService, otaPackageService: OtaPackageService, widgetService: WidgetService, deviceProfileService: DeviceProfileService, tenantProfileService: TenantProfileService, assetProfileService: AssetProfileService, utils: UtilsService, queueService: QueueService, notificationService: NotificationService, alarmService: AlarmService, resourceService: ResourceService, oauth2Service: OAuth2Service, mobileAppService: MobileAppService, aiModelService: AiModelService);
     private getEntityObservable;
     getEntity(entityType: EntityType, entityId: string, config?: RequestConfig): Observable<BaseData<EntityId>>;
     private getEntitiesByIdsObservable;
@@ -103,7 +105,6 @@ export declare class EntityService {
     private getUpdateEntityTasks;
     saveEntityData(entityId: EntityId, entityData: ImportEntityData, config?: RequestConfig): Observable<any>;
     private getStateEntityInfo;
-    private resolveAliasEntityId;
     private createDatasourceFromSubscriptionInfo;
     private validateSubscriptionInfo;
     private prepareEntityFilterFromSubscriptionInfo;

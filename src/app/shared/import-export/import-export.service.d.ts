@@ -117,7 +117,7 @@ export declare class ImportExportService {
     private prepareEntityAlias;
     private openImportDialog;
     private exportToPc;
-    private exportJson;
+    exportJson(data: any, filename: string): void;
     private downloadFile;
     private prepareDashboardExport;
     private prepareProfileExport;

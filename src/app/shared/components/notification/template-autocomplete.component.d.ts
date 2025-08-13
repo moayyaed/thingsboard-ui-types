@@ -47,6 +47,7 @@ export declare class TemplateAutocompleteComponent implements ControlValueAccess
     clear(): void;
     editTemplate($event: Event): void;
     createTemplate($event: Event, button: MatButton): void;
+    createTemplateByName($event: Event, name?: string): void;
     private openNotificationTemplateDialog;
     private updateView;
     private fetchTemplate;

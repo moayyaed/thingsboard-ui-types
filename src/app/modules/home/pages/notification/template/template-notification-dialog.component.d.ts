@@ -18,6 +18,7 @@ export interface TemplateNotificationDialogData {
     predefinedType?: NotificationType;
     isAdd?: boolean;
     isCopy?: boolean;
+    name?: string;
 }
 export declare class TemplateNotificationDialogComponent extends TemplateConfiguration<TemplateNotificationDialogComponent, NotificationTemplate> implements OnDestroy {
     protected store: Store<AppState>;

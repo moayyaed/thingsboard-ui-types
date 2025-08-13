@@ -84,8 +84,11 @@ export declare const HelpLinks: {
         ruleNodeCalculatedFields: string;
         ruleNodeClearAlarm: string;
         ruleNodeCreateAlarm: string;
+        ruleNodeCopyToView: string;
         ruleNodeCreateRelation: string;
         ruleNodeDeleteRelation: string;
+        ruleNodeDeviceState: string;
+        ruleNodeMessageCount: string;
         ruleNodeMsgDelay: string;
         ruleNodeMsgGenerator: string;
         ruleNodeGpsGeofencingEvents: string;
@@ -93,10 +96,12 @@ export declare const HelpLinks: {
         ruleNodeRpcCallReply: string;
         ruleNodeRpcCallRequest: string;
         ruleNodeSaveAttributes: string;
+        ruleNodeDeleteAttributes: string;
         ruleNodeSaveTimeseries: string;
         ruleNodeSaveToCustomTable: string;
         ruleNodeRuleChain: string;
         ruleNodeOutputNode: string;
+        ruleNodeAiRequest: string;
         ruleNodeAwsLambda: string;
         ruleNodeAwsSns: string;
         ruleNodeAwsSqs: string;
@@ -112,6 +117,7 @@ export declare const HelpLinks: {
         ruleNodeRestCallReply: string;
         ruleNodePushToCloud: string;
         ruleNodePushToEdge: string;
+        ruleNodeDeviceProfile: string;
         ruleNodeAcknowledge: string;
         ruleNodeCheckpoint: string;
         ruleNodeSendNotification: string;
@@ -158,6 +164,7 @@ export declare const HelpLinks: {
         mobileBundle: string;
         mobileQrCode: string;
         calculatedField: string;
+        aiModels: string;
         timewindowSettings: string;
         trendzSettings: string;
     };

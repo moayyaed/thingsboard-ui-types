@@ -1,3 +1,4 @@
+export * from './custom-translate.pipe';
 export * from './date-ago.pipe';
 export * from './enum-to-array.pipe';
 export * from './highlight.pipe';
